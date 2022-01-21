@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Carbon\Carbon;
+// use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +13,8 @@ use Carbon\Carbon;
 |
 */
 
-Route::get('/', function () {
-    dd(Carbon::now('UTC'));
-    // return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [App\Http\Controllers\WeatherController::class, 'index'])->name('weatherlist');
